@@ -1,7 +1,12 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title> Ajax and Json | Tutorial</title>
+        <title>Hello</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript"
+        src="jquery-3.3.1.min.js"></script>
+        <!--        <script src="api-registry.json" ></script>-->
+
         <style>
             body{
                 font-family: sans-serif;
@@ -32,43 +37,47 @@
                 padding: 6px;
             }
         </style>
-
     </head>
-
     <body>
         <div class="ajax-container">
             <input type="button" id="btnAjaxCall" value="Ajax Call" />
 
-            <div class="display-data"> </div> <!-- แสดงผลข้อมูลตรงนี้ -->
+            <div class="display-data"> </div>
         </div>
     </body>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-
     <script>
-        var count = 0;
-
         $("#btnAjaxCall").click(function () {
             fetchDataAndDisplay();
         });
-
         function fetchDataAndDisplay() {
             $.ajax({
-                url: "http://localhost:3000/products",
-                method: "GET",
-                dataType: "json"
-            }).done(function (data) {
-                $(".display-data").empty();
-                $.each(data.products, function (i) {
-                    $(".display-data").append('Id: '+data.products[i]._id +'<br/>'+
-                            'Name: '+data.products[i].name +'<br/>'+
-                            'Price: '+data.products[i].price +'<br/>'
-                            );
-                });
+                url: "https://localhost:8443/apiman-gateway/Monster/users/1.0?apikey=b55e1b05-ae1a-4165-b866-5a543dc93131",
+                headers: {
+                    method: 'GET',
+                    dataType: 'jsonp',
+                    contentType: "application/json; charset=utf-8",
+                    Accept: 'application/json',
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,PATCH",
+                    "Access-Control-Allow-Headers": "Origin,X-Requested-With,Content-Type,Accept,Authorization,X-API-Key",
+                    Authorization: 'X-API-Key b55e1b05-ae1a-4165-b866-5a543dc93131'
+                },
+                success: function (data) {
+                    $(".display-data").empty();
+                    for (i = 0; i < data.length; i++) {
+                        $(".display-data").append('Id: ' + data[i].id + '<br/>' +
+                                'Name: ' + data[i].name + '<br/>' +
+                                'Username: ' + data[i].username + '<br/>' +
+                                'Position: ' + data[i].position + '<br/>'
+                                );
+                    }
+                },
+                error: function (error) {
+                    alert('Failed!');
+                    //alert(error.statusCode);
+                }
             });
         }
     </script>
-
 </html>
