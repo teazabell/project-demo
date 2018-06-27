@@ -16,6 +16,8 @@ node index.js
 
 Add extention on your Google Chrome
 
+[I'm an inline-style link](https://www.google.com)
+
 [Click Here] (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)
 
 # Run on Firefox 
