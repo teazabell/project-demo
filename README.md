@@ -20,5 +20,13 @@ Add extention on your Google Chrome [Click Here](https://chrome.google.com/webst
 
 Open your Firefox and type [about:config](about:config) into the URL bar.  Agree to the statement about risk and do a search for: **security.fileuri.strict_origin_policy** And change it to false.
 
+# Step by Step
 
+1.start your api in cmd **node index.js**
+
+2.Create api in APIMAN and get Endpoint and API-Key from it
+
+3.
+
+Coming soon
 
