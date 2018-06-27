@@ -14,9 +14,7 @@ node index.js
 
 # Run on Google Chrome
 
-Add extention on your Google Chrome
-
-[Click Here](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)
+Add extention on your Google Chrome [Click Here](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)
 
 # Run on Firefox 
 
